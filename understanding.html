@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CONSTRUCTOR FUNCTION</h1>
+</body>
+</html>
+<script>
+
+/*
+var person = {
+    name:'jhon',
+    degree:'btec',
+    myName:function(){
+    
+        console.log(person.degree)
+
+
+    }
+}
+
+person.myName();
+
+
+
+function player1(n,t,p){
+    this.name=n
+    this.team=t
+    this.power=p
+}
+var superstar = new player1('jhon','smackdown','100');
+console.log(superstar);
+var superstar2 = new player1('randy','RAW','80')
+console.log(superstar2) */
+
+
+
+
+
+// call,apply,bind
+/*  var person1 ={
+    name:'ashish'
+}
+var person2 = {
+    name:'ram',
+    school:'rv'
+}
+
+function myName(){
+    console.log(this.school)
+}
+myName.call(person2); */
+
+
+// var person1 ={
+//     name:'ashish'
+// }
+// var person2 = {
+//     name:'ram',
+    
+// }
+// var person3 ={
+//     sex:'no'
+// }
+// function myName (m,c,f){
+//     this.gender=m
+//     this.city=c
+//     this.food=f
+// }
+// myName.apply(person3,['male','city','food'])
+// console.log(person3)
+
+// CONSTRUCTOR FUNCTION 7april 3:00;######
+
+
+
+// function myfunction(){
+//     var obj={
+//      name:'ashish',
+//      age:'33'
+
+
+//     }
+//     return obj
+// }
+// console.log(myfunction())
+
+// NORMAL FUNCTION
+// function nikePro(n,p){
+//     var obj={};
+//     obj.name = n;
+//     obj.price = p;
+    
+//     return obj;
+// }
+// let value = nikePro('bag',5000);
+// console.log(value);
+
+
+// USING THIS
+
+// function nikeNew(n,p){
+//     this.name=n;
+//     this.price=p;
+// }
+// var new1 = new nikeNew("hat",400);
+// console.log(new1);
+
+
+
+let person1 = {
+    name :'Amar',
+    city:'Goa',
+      
+    hobbies:function(hobbies1,hobbies2,hobbies3){
+        console.log(`my name is ${this.name} i live in ${this.city} my wish i could do ${hobbies1} ,${hobbies2} and ${hobbies3}`)
+    },
+
+};
+
+let person2 = {
+    name:'Akbar',
+    city:'kashmir',
+}
+
+let person3 = {
+    name:'Anthony',
+    city:'mumbai',
+};
+
+person1.hobbies.call(person3,"singing","reading","dancing");
+
+
+
+
+
+// SWANAND NoTE
+
+
+function NikeProduct(n, p) {
+  let obj = {};
+
+  obj.name = n;
+  obj.price = p;
+
+  return obj;
+}
+
+let p1 = NikeProduct("shoes", 200);
+console.log("p1:", p1);
+
+//constructor function
+
+//this, new
+
+function NikeProductCF(n, p) {
+  this.name = n;
+  this.price = p;
+}
+
+let p2 = new NikeProductCF("shoes", 5000);
+console.log("p2:", p2);
+
+//what does new do?
+//it returns the object
+
+// create a form to accept values
+
+let arr = [];
+
+function Student(n, p, b) {
+  this.name = n;
+  (this.price = p), (this.brand = b);
+}
+
+function storeProducts(e) {
+  e.preventDefault();
+
+  let form = document.getElementById("products");
+
+  let name = form.name.value;
+
+  let price = form.price.value;
+
+  let brand = form.brand.value;
+
+  let p1 = new Product(name, price, brand);
+
+  arr.push(p1);
+  console.log("arr:", arr);
+}
+
+let kitchen = {
+  name: "kitchen",
+  purpose: "cook",
+
+  cookFood: function (order) {
+    console.log(`serving ${order} in ${this.name}`);
+  },
+};
+
+let living_room = {
+  name: "living room",
+  purpose: "watching tv",
+};
+
+let bedroom = {
+  name: "bedroom",
+  purpose: "sleep",
+};
+
+let x = kitchen.cookFood.bind(bedroom, "samosa");
+
+x();
+
+
+
+let thor = {
+  superpower: "hammer",
+};
+
+let captain_a = {
+  superpower: "shield",
+};
+
+function supersuperman() {
+  console.log(`i have ${this.superpower}`);
+}
+
+supersuperman.call(thor);
+
+kitchen.cookFood("maggie"); //this -> kitchen
+
+?? //this -> living_room
+
+we are trying to change the owner object
+
+kitchen.cookFood.call(bedroom, "samosa");
+
+.call(living_room)
+
+
+
+</script>
